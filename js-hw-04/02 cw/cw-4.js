@@ -73,7 +73,6 @@
 // - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
 
 // const num = [1, 5, 29, 4, 6, 5, 10, 11, 9, 3, 2, 6, 4, 4, 1];
-//
 // function sumNumbers(arr) {
 //     let sum = 0;
 //     for (let i = 0; i < arr.length; i++) {
@@ -81,37 +80,50 @@
 //     }
 //     return sum;
 // }
-// //console.log(sumNumbers(num));
-// //console.log(num.length);
-//
+// console.log('Arr sum: ' + sumNumbers(num));
+// console.log('Arr lenght: ' + num.length);
 //
 // function averageNumber (arr) {
 //     return sumNumbers(arr) / arr.length;
 //     //return Math.round(sumNumbers(arr) / arr.length);
 // }
-// console.log(averageNumber(num));
+// console.log('Average number: ' + averageNumber(num));
+
 
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше (Math використовувати заборонено);
 
-// const num = [1, 2, 3, 4];
-
-// function minMaxNumber() {
-//     for (const number in arguments) {
-//         for (const k in arguments) {
-//             if (number > k) {
-//                 console.log(number);
-//             }
+// function min(arr) {
+//     let minValue = Infinity;
+//     for (const i in arr) {
+//         if (arr[i] < minValue) {
+//             minValue = arr[i];
 //         }
 //     }
+//     return minValue;
+// }
+// // console.log(min(10, -6, 20, 9));
+// function max(arr) {
+//     let maxValue = -Infinity;
+//     for (const i in arr) {
+//         if (arr[i] > maxValue) {
+//             maxValue = arr[i];
+//         }
+//     }
+//     return maxValue;
+// }
+// // console.log(max(10, -6, 20, 9));
+//
+// function minMaxNumber() {
+//     console.log(max(arguments));
+//     return min(arguments);
 // }
 //
-// // debugger
-// minMaxNumber(1, 2, 3, 4);
+// minMaxNumber(10, 20, 3, 4);
 // minMaxNumber(1, 2, 3, 4, 5, 5);
+
 
 // - створити функцію яка заповнює масив рандомними числами
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100)) та виводить його.
-
 
 // function rundomArr(size) {
 //     const numbers = [];
@@ -120,9 +132,7 @@
 //     }
 //     console.log(numbers);
 // }
-
 // rundomArr(20);
-
 
 
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент, який характеризує кінцеве значення діапазону.

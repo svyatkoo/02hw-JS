@@ -106,7 +106,9 @@
 // let abc = [true, 45, 'str1', 'str2', -5, false, true, 21, 7, 89];
 // function arrConstructor (arr) {
 //     for (let i = 0; i < arr.length; i++) {
+//         document.write(`<ul>`)
 //         document.write(`<li>${arr[i]}</li>`)
+//         document.write(`</ul>`)
 //     }
 // }
 // arrConstructor(abc);
