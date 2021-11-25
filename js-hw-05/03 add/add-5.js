@@ -25,7 +25,7 @@
 //     }
 //     return numArr;
 // }
-// console.log(numbersRange(5, 1));
+// console.log(numbersRange(10, 20));
 
 
 // -   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
