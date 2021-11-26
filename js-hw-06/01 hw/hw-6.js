@@ -50,7 +50,7 @@
 
 // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
 
-// delete_characters = (anyStr, length) => str.slice(0, length);
+// delete_characters = (anyStr, length) => str.substr(0, length);
 //
 // let str = 'Каждый охотник желает знать';
 // document.writeln(delete_characters(str, 7)); // Каждый
@@ -76,17 +76,16 @@
 
 // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
 
-// let myStr = 'hello!!! javascript is cool. the first letter must be upper case';
+// let myStr = 'hello!!! javascript is cool. the first letter, must be upper case';
 // capitalize = (str) => {
 //     let capitalizeStr = [];
 //     const strArr = str.split(' ');
-//     console.log(strArr)
 //     for (const item of strArr) {
 //         let firstLetter = item.slice(0, 1);
 //         let firstUpperLetter = item.replace(firstLetter, firstLetter.toUpperCase());
 //         capitalizeStr.push(firstUpperLetter);
 //     }
-//     console.log(capitalizeStr.toString().replaceAll(',', ' '));
+//     console.log(capitalizeStr.join(' '));
 // }
 // capitalize(myStr);
 
