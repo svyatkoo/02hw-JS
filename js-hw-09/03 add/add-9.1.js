@@ -234,3 +234,67 @@
     ];
 
 // Створити під кожен елемент окремий блок. В цьому блоці, під кожну властивість, та властивості внутрішніх об'єктів створити свої окремі блок.
+
+let wrap = document.createElement("div");
+wrap.classList.add("wrap");
+document.body.appendChild(wrap);
+
+
+usersList.forEach(item => {
+    console.log(item.length);
+    const container = document.createElement("div");
+    container.classList.add("container");
+    wrap.appendChild(container);
+    for (const itemKey in item) {
+        const div = document.createElement("div");
+        div.classList.add("div");
+        if (typeof(item[itemKey]) !== "object") {
+            div.innerText = `${itemKey} : ${item[itemKey]}`;
+            container.append(div);
+        } else {
+            for (const key in item[itemKey]) {
+                const div2 = document.createElement("div");
+                div2.classList.add("div2");
+                if (typeof(item[itemKey][key]) !== "object") {
+                    div2.innerText = `${key} : ${item[itemKey][key]}`;
+                    container.append(div2);
+                } else {
+                    for (const k in item[itemKey][key]) {
+                        const div3 = document.createElement("div");
+                        div3.classList.add("div3");
+                        div3.innerText = `${k} : ${item[itemKey][key][k]}`;
+                        container.append(div3);
+                    }
+                }
+            }
+        }
+
+
+
+        // if (itemKey !== "address" && itemKey !== "company") {
+        //     div.innerText = `${itemKey} : ${item[itemKey]}`;
+        //     container.append(div);
+        // } else if (itemKey !== "address" || itemKey !== "company") {
+        //     // console.log(item[itemKey]);
+        //     // let xxx = {};
+        //     // console.log(typeof(xxx));
+        // }
+
+    }
+
+
+
+
+    // const container = document.createElement("div");
+    // const container = document.createElement("div");
+    // const container = document.createElement("div");
+    // const container = document.createElement("div");
+
+    // div.innerText = item.id;
+    // div.innerText = item.name;
+    // div.innerText = item.username;
+    // div.innerText = item.email;
+
+
+
+})
