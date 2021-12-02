@@ -239,7 +239,6 @@ let wrap = document.createElement("div");
 wrap.classList.add("wrap");
 document.body.appendChild(wrap);
 
-
 usersList.forEach(item => {
     console.log(item.length);
     const container = document.createElement("div");
@@ -268,33 +267,5 @@ usersList.forEach(item => {
                 }
             }
         }
-
-
-
-        // if (itemKey !== "address" && itemKey !== "company") {
-        //     div.innerText = `${itemKey} : ${item[itemKey]}`;
-        //     container.append(div);
-        // } else if (itemKey !== "address" || itemKey !== "company") {
-        //     // console.log(item[itemKey]);
-        //     // let xxx = {};
-        //     // console.log(typeof(xxx));
-        // }
-
     }
-
-
-
-
-    // const container = document.createElement("div");
-    // const container = document.createElement("div");
-    // const container = document.createElement("div");
-    // const container = document.createElement("div");
-
-    // div.innerText = item.id;
-    // div.innerText = item.name;
-    // div.innerText = item.username;
-    // div.innerText = item.email;
-
-
-
 })
