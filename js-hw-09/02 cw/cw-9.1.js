@@ -79,10 +79,10 @@ document.body.insertBefore(wrap, scriptFirstElement);
 
 for (const course of coursesArray) {
     let container = document.createElement("div");
-    container.classList = "container";
+    container.classList.add("container");
     wrap.appendChild(container);
     let divDuration = document.createElement("div");
-    divDuration.classList = "divDuration";
+    divDuration.classList.add("divDuration");
     container.appendChild(divDuration);
 
 
