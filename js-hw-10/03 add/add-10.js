@@ -41,7 +41,7 @@
 //         btn.style.boxSizing = "border-box";
 //
 //         pTagName.innerText = "Tag name: " + `${e.target.nodeName.toLowerCase()}`;
-//         let classNames = (e.target.className) ? ("Class list: " + e.target.className.replaceAll(" ", ", ")) : "Class list: This tag hasn`t class!";
+//         let classNames = (e.target.className) ? ("Class list: " + e.target.className.replaceAll(" ", ", ")) : "Class list: This tag hasn`t classes!";
 //         pClassNames.innerText = `${classNames}`;
 //         let idNames = (e.target.id) ? ("Id list: " + e.target.id.replaceAll(" ", ", ")) : "Id list: This tag hasn`t id!";
 //         pIdNames.innerText = `${idNames}`;
@@ -152,19 +152,107 @@
 // }
 
 
-
+///////////////////////////////////////////////////////////////
 // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
 
+///////////////////////////////////////////////////////////////
+
+
+
 
 
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 
+// const image = [{photo : "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg"},
+//     {photo : "https://upload.wikimedia.org/wikipedia/commons/a/a0/Pierre-Person.jpg"},
+//     {photo : "https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=0hb44OrI"},
+//     {photo : "https://st4.depositphotos.com/12982378/22072/i/600/depositphotos_220729084-stock-photo-smiling-adult-man-with-crossed.jpg"},
+//     {photo : "https://thumbs.dreamstime.com/b/happy-person-portrait-smiling-woman-tanned-skin-curly-hair-happy-person-portrait-smiling-young-friendly-woman-197501184.jpg"},
+//     {photo : "https://www.bkacontent.com/wp-content/uploads/2020/10/Depositphotos_336730000_l-2015.jpg"},
+//     {photo : "http://thebodyisnotanapology.com/wp-content/uploads/2018/02/pexels-photo-459947.jpg"},
+//     {photo : "https://en.amerikanki.com/wp-content/uploads/2013/01/8-Ways-to-Be-a-Sincere-Person.jpg"},
+//     {photo : "https://liveboldandbloom.com/wp-content/uploads/2021/09/Untitled_design_3_1.png"}];
+//
+// const container = document.createElement("div");
+// container.classList.add("container");
+// const picture = document.createElement("img");
+// picture.src = image[0].photo;
+// container.appendChild(picture);
+// document.body.appendChild(container);
+// let imgElement = document.getElementsByTagName("img")
+// let position = imgElement.src;
+// console.log(imgElement[0]);
+// let i = 0;
+//
+// window.addEventListener("keydown", function (event) {
+//     switch (event.key) {
+//         case "ArrowLeft":
+//             i = i - 1;
+//             if (i < 0) {
+//                 i = image.length - 1;
+//             }
+//             picture.src = image[i].photo;
+//             break;
+//         case "ArrowRight":
+//             i++;
+//             if (i >= image.length) {
+//                 i = 0;
+//             }
+//             picture.src = image[i].photo;
+//             break;
+//         default:
+//             console.log("Use only left or right arrows!");
+//     }
+// });
 
 
+
+
+///////////////////////////////////////////////////////////////
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
 
-// // // // //getSelection()
+
+
+document.body.onselectstart = function (e) {
+    document.body.onclick = function (e) {
+        let str = e.target.textContent;
+        let text = "";
+        console.log(e.target);
+        console.log(e.target.innerText);
+        if (document.getSelection) {
+            console.log(e);
+            text = document.getSelection().toString();
+            console.log(e.target.firstChild);
+
+
+            function replaceString(oldStr, newStr, fullStr) {
+                for (let i = 0; i < fullStr.length; ++i) {
+                    if (fullStr.substring(i, i + oldStr.length) == oldStr) {
+                        fullStr = fullStr.substring(0, i) + newStr + fullStr.substring(i + oldStr.length, fullStr.length);
+                    }
+                }
+                return fullStr;
+            }
+
+            console.log(replaceString(text, text.toLocaleUpperCase(),  str));
+            e.target.innerText = replaceString(text, text.toLocaleUpperCase(),  str);
+
+
+
+            // return e.target.parentNode.replaceChild(newChild, oldChild);
+
+
+            // e.target.innerHTML = str.replace(text, ((text) => e.target.append = `<span>${text}</span>`));
+            // let span = document.getElementsByTagName("span");
+            // span[0].classList.add("colored");
+        }
+    }
+}
+
+
+
+///////////////////////////////////////////////////////////////

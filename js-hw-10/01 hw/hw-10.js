@@ -66,58 +66,33 @@
 // //     Вывести список комментариев в документ, каждый в своем блоке.
 // //     Добавьте каждому комментарию по кнопке для сворачивания его body.
 //
-// let form = document.createElement("form");
-// form.classList.add("form1");
+//
+// let comments = [{title : 'lorem', body:'lorem ipsum dolo sit ameti'},
+//     {title : 'lorem1', body:'lorem ipsum dolo sit ameti'},
+//     {title : 'lorem2', body:'lorem ipsum dolo sit ameti lorem ipsum dolo sit ameti'},
+//     {title : 'lorem3', body:'lorem ipsum dolo sit ametilorem i'},
+//     {title : 'lorem4', body:'lorem ipsum dolo sit ameti lorem ipsum dolo lorem ipsum dolo sit ameti'},
+//     {title : 'lorem5', body:'lorem ipsum '},
+//     {title : 'lorem6', body:'lorem ipsum dolo sit ameti lorem ipsum dolo sit ametilorem ipsum dolo sit ameti'},
+// ];
 // let wrap = document.createElement("div");
 // wrap.classList.add("wrap");
-// let inputTitle = document.createElement("input");
-// inputTitle.name = "title";
-// inputTitle.placeholder = "Title";
-// let inputText = document.createElement("textarea");
-// inputText.name = "text";
-// inputText.maxlength = "300";
-// inputText.placeholder = "Your comment";
-// let btnDiv = document.createElement("div");
-// btnDiv.classList.add('btnDiv')
-// let btn = document.createElement("button");
-// btn.innerText = "Save comment";
-// let showCommentsButton = document.createElement("button");
-// showCommentsButton.classList.add("showCommentsButton");
-// showCommentsButton.innerText = "Show comments";
-// btnDiv.append(btn, showCommentsButton);
-// form.append(inputTitle, inputText, btnDiv);
-// document.body.append(form, wrap);
-// const commentsArr = [];
-// form.onsubmit = function (e) {
-//     e.preventDefault();
-//     let title = this.title.value;
-//     let text = this.text.value;
-//     if (title.length > 0 || text.length > 0) {
-//         commentsArr.push({title : title, text : text});
-//         console.log(commentsArr);
-//     }
-// }
+// document.body.append(wrap);
 // function showComments(arr) {
 //     for (const arrElement of arr) {
-//         console.log(arrElement);
 //         let comment = document.createElement("div");
 //         comment.classList.add("comment");
-//         wrap.appendChild(comment);
-//         for (const key in arrElement) {
-//             let p = document.createElement("p");
-//             let title = key[0].toUpperCase() + key.slice(1);
-//             p.innerText = `${title} : ${arrElement[key]}`;
-//             console.log(key);
-//             console.log(arrElement[key]);
-//             comment.appendChild(p);
+//         let h3 = document.createElement("h3");
+//         h3.innerText = arrElement.title;
+//         let p = document.createElement("p");
+//         p.innerText = arrElement.body;
+//         let btn = document.createElement("button");
+//         btn.innerText = "Hide comment";
+//         btn.onclick = function () {
+//             p.classList.toggle("bodyHide");
 //         }
+//         comment.append(h3, p, btn);
+//         wrap.appendChild(comment);
 //     }
 // }
-// showCommentsButton.onclick = () => {
-//     if (commentsArr.length > 0) {
-//         showComments(commentsArr);
-//     } else {
-//         console.log("No comments!")
-//     }
-// }
-
+// showComments(comments);
