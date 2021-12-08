@@ -152,12 +152,11 @@
 // }
 
 
-///////////////////////////////////////////////////////////////
+/////////////////<---in progress--->//////////////////////////////
 // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
 //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
-
 ///////////////////////////////////////////////////////////////
 
 
@@ -211,48 +210,16 @@
 
 
 
-///////////////////////////////////////////////////////////////
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
 
+// document.body.onselectstart = function (e) {
+//     document.body.onclick = function (e) {
+//         if (document.getSelection) {
+//             let str = e.target.textContent;
+//             let text = document.getSelection().toString();
+//             e.target.innerHTML = str.replace(text, ((text) => e.target.append = `<span id="colorId">${text}</span>`));
+//         }
+//     }
+// }
 
-
-document.body.onselectstart = function (e) {
-    document.body.onclick = function (e) {
-        let str = e.target.textContent;
-        let text = "";
-        console.log(e.target);
-        console.log(e.target.innerText);
-        if (document.getSelection) {
-            console.log(e);
-            text = document.getSelection().toString();
-            console.log(e.target.firstChild);
-
-
-            function replaceString(oldStr, newStr, fullStr) {
-                for (let i = 0; i < fullStr.length; ++i) {
-                    if (fullStr.substring(i, i + oldStr.length) == oldStr) {
-                        fullStr = fullStr.substring(0, i) + newStr + fullStr.substring(i + oldStr.length, fullStr.length);
-                    }
-                }
-                return fullStr;
-            }
-
-            console.log(replaceString(text, text.toLocaleUpperCase(),  str));
-            e.target.innerText = replaceString(text, text.toLocaleUpperCase(),  str);
-
-
-
-            // return e.target.parentNode.replaceChild(newChild, oldChild);
-
-
-            // e.target.innerHTML = str.replace(text, ((text) => e.target.append = `<span>${text}</span>`));
-            // let span = document.getElementsByTagName("span");
-            // span[0].classList.add("colored");
-        }
-    }
-}
-
-
-
-///////////////////////////////////////////////////////////////
