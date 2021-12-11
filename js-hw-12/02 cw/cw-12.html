@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .wrap {
+            background: aquamarine;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 30px;
+            row-gap: 30px;
+            padding: 20px;
+        }
+
+        .container {
+            background: gold;
+            border: 2px solid darkcyan;
+            border-radius: 15px;
+            width: 30%;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 20px;
+        }
+
+        .containerBody > p {
+            margin-top: 10px;
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            text-align: justify;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            background: darkcyan;
+            width: 50%;
+            align-self: center;
+        }
+
+        .wrapComments {
+            display: none;
+            background: antiquewhite;
+            row-gap: 10px;
+            overflow: auto;
+            max-height: 250px;
+        }
+
+        .commentsSwitch {
+            display: block;
+        }
+
+        .wrapComments > h4 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .commentsDiv {
+            border: 2px solid black;
+            margin: 10px 0;
+            word-break: break-all;
+        }
+
+        .noDecor {
+            font-weight: normal;
+        }
+
+        .commentsDiv > p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<script src="cw-12.js"></script>
+</body>
+</html>
