@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 30px;
+            padding: 50px;
+        }
+
+        .userContainer {
+            width: 45%;
+        }
+
+        .userContainer, .userContainerBody {
+            border: 2px solid black;
+            padding: 10px;
+            background: cornflowerblue;
+        }
+
+        button {
+            margin-top: 20px;
+        }
+        .postsWrap {
+            background: cornflowerblue;
+        }
+
+        .commentsWrap {
+            background: aqua;
+        }
+
+        .postsWrap, .commentsWrap {
+            display: none;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 20px;
+            padding: 10px;
+            /*max-height: 400px;*/
+            /*overflow: auto;*/
+        }
+
+        .postsWrap > h3, .commentsWrap > h3 {
+            text-align: center;
+        }
+
+        .postsContainer, .commentsContainer {
+            border: 2px solid black;
+        }
+
+        .showPosts {
+            display: flex;
+        }
+
+        .showComments {
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+<script src="add-12.js"></script>
+</body>
+</html>
