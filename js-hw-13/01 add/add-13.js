@@ -9,6 +9,10 @@
 // На сторінці  list.html побудувати кнопку яка видаляє всі товари з корзини та локалстораджа.
 //     До кожного товару додати кнопку, при кліку на яку з лс видаляється конкретний обраний  товар
 
+// localStorage.clear();
+let wrapper = document.createElement("div");
+wrapper.classList.add("wrapper");
+
 
 let f1 = document.createElement("form");
 f1.name = "f1";
@@ -22,18 +26,35 @@ let inputPhoto = document.createElement("input");
 inputPhoto.placeholder = "Photo:";
 let btnSaveForm = document.createElement("button");
 btnSaveForm.innerText = "Save";
+
+let link = document.createElement("a");
+link.href = "./list.html";
+let linkBtn = document.createElement("button");
+linkBtn.classList.add("linkBtn");
+linkBtn.innerText = "To the products page";
+
+link.append(linkBtn);
 f1.append(inputName, inputQuantity, inputPrice, inputPhoto, btnSaveForm);
-document.body.append(f1);
+// document.body.append(f1, link);
+
+wrapper.append(f1, link);
+document.body.append(wrapper);
+
+
 
 
 f1.onsubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     this.name = inputName.value;
     this.quantity = inputQuantity.value;
     this.price = inputPrice.value;
     this.photo = inputPhoto.value;
-    let goodsArr = JSON.parse(localStorage.getItem("favoriteGoods")) || [];
-    goodsArr.push({name, quantity, price, photo});
-    localStorage.setItem("favoriteGoods", JSON.stringify(goodsArr));
-    console.log(goodsArr);
+    let productsArr = JSON.parse(localStorage.getItem("favoriteProducts")) || [];
+    productsArr.push({id : Date.now(), name, quantity, price, photo});
+    localStorage.setItem("favoriteProducts", JSON.stringify(productsArr));
+    console.log(productsArr);
+
 }
+
+let xxx = Date.now();
+console.log(xxx);
