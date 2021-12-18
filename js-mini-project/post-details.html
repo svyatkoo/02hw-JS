@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+        .postWrap {
+            width: 50%;
+            margin: 0 auto;
+            background: azure;
+            border: 2px solid silver;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        p {
+            text-align: justify;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        .postWrap > p:nth-child(4) {
+            margin-top: 10px;
+            border-top: 2px solid silver;
+            border-bottom: 2px solid silver;
+        }
+
+        .btnComments {
+            margin-top: 30px;
+            padding: 10px 40px;
+            border: 2px solid deepskyblue;
+            border-radius: 5px;
+            box-sizing: border-box;
+            align-self: center;
+        }
+
+        .commentsOfPost {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+        .commentBox {
+            border: 2px solid silver;
+            padding: 10px;
+            box-sizing: border-box;
+
+        }
+
+        .commentBox > p {
+            margin-top: 10px;
+            border-top: 2px solid silver;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<script src="post-details.js"></script>
+</body>
+</html>

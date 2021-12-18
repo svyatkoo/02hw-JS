@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Users</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .wrapUsers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 50px;
+            background: azure;
+            row-gap: 50px;
+        }
+
+        .userContainer {
+            width: 48%;
+            padding: 20px;
+            border: 2px solid deepskyblue;
+            box-sizing: border-box;
+            background: azure;
+        }
+
+        .userContainerHeader {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid silver;
+        }
+
+        span {
+            font-weight: normal;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px 40px;
+            border: 2px solid deepskyblue;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 860px) {
+            .userContainerHeader {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<script src="index.js"></script>
+</body>
+</html>
