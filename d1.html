@@ -10,37 +10,39 @@
 <body>
 <script>
 
-//     // Дано натуральное число N. Вычислите сумму его цифр.
-//     //     При решении этой задачи нельзя использовать строки,
-//     //     массивы ну и циклы, разумеется.
-//     //     Рекурсія)
-//     //
-//     // пример:
-//     //     1234 -> 10
-//     // 879 -> 24
-//     // 11 -> 2
-//
-// let sumNumbers = 0;
-// sum = (num) => {
-//     if (typeof(num) === "number" && num > 0){
-//         if (num < 10 && sumNumbers === 0) {
-//             console.log(num);
-//         } else {
-//             sumNumbers = sumNumbers + num % 10;
-//             let newNumber = (num - (num % 10)) / 10;
-//             if (newNumber % 10) {
-//                 sum(newNumber);
-//             } else {
-//                 console.log(sumNumbers);
-//             }
-//         }
-//     } else {
-//         console.log("Error");
-//     }
-// }
-// sum(1234);
-// // sum(879);
-// // sum(11);
+    // Дано натуральное число N. Вычислите сумму его цифр.
+    //     При решении этой задачи нельзя использовать строки,
+    //     массивы ну и циклы, разумеется.
+    //     Рекурсія)
+    //
+    // пример:
+    //     1234 -> 10
+    // 879 -> 24
+    // 11 -> 2
+
+let sumNumbers = 0;
+sum = (num) => {
+    if (typeof(num) === "number" && num > 0){
+        if (num < 10 && sumNumbers === 0) {
+            console.log(num);
+        } else {
+            sumNumbers = sumNumbers + num % 10;
+            let newNumber = (num - (num % 10)) / 10;
+            if (newNumber % 10) {
+                sum(newNumber);
+            } else {
+                console.log(sumNumbers);
+            }
+        }
+    } else {
+        console.log("Error");
+    }
+}
+sum(1234);
+// sum(879);
+// sum(11);
+
+
 
 </script>
 </body>
