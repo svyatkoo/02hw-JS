@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<!--создать функцию которая принимает массив чисел и возвращает массив только с уникальными ( не повторяющимися ) числами-->
+
+<!--Пример:-->
+<!--unique([0, 3, 0, 7, 1, 5, 1, 3, 5, 2]) -> [2, 7]-->
+<!--unique([1,2,3,4,2,5,1]) -> [ 3, 4, 5 ]-->
+
+<script>
+    function uniqueNumbers(arr) {
+        let uniqueNumArr = [];
+        for (const arrElement of arr) {
+            let num = arr.filter(number => arrElement === number);
+            if (num.length === 1) {
+                uniqueNumArr.push(num[0]);
+            }
+        }
+        console.log(uniqueNumArr.sort((a, b) => a - b));
+    }
+
+    uniqueNumbers([0, 3, 0, 7, 1, 5, 1, 3, 5, 2]);
+    uniqueNumbers([1,2,3,4,2,5,1]);
+    uniqueNumbers([1,2,3,4,2,5,1,10,5,21,4,67,1002,45,45,67, -2, 0]);
+</script>
+</body>
+</html>
