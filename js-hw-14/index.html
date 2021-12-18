@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    //--------- Callback ------------
+
+    // let num = 0;
+    // function wakeUp(dayTime, callback) {
+    //     setTimeout(() => {
+    //         if (dayTime === "morning") {
+    //             console.log("1) It`s morning");
+    //             num = 1;
+    //             callback();
+    //             return;
+    //         }
+    //         console.error("Go sleep");
+    //     }, 2000)
+    // }
+    // function goWosh(condition, callback) {
+    //     setTimeout(() => {
+    //         if (condition === 1) {
+    //             console.log("2) Woshing");
+    //             num = 2;
+    //             callback();
+    //             return;
+    //         }
+    //         console.error("Go to shower");
+    //     }, 1000)
+    // }
+    // function goEat(condition, callback) {
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 2) {
+    //                 console.log("3) Eat");
+    //                 num = 3;
+    //                 callback();
+    //                 return;
+    //             }
+    //             console.error("Prepare breakfast");
+    //         }, 3000)
+    //     }
+    //     // console.log(num);
+    // }
+    // function getDressed(condition, callback) {
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 3) {
+    //                 console.log("4) getDressed");
+    //                 num = 4;
+    //                 callback();
+    //                 return;
+    //             }
+    //             console.error("You need clothes");
+    //         }, 200)
+    //     }
+    // }
+    // function goWork(condition, callback){
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 4) {
+    //                 console.log("5) Go go to work");
+    //                 num = 5;
+    //                 callback();
+    //                 return;
+    //             }
+    //             console.error("Harry up");
+    //         }, 1000)
+    //     }
+    // }
+    // function doCalls(condition, callback){
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 5) {
+    //                 console.log("6) Calls to clients");
+    //                 num = 6;
+    //                 callback();
+    //                 return;
+    //             }
+    //             console.error("You are lazy");
+    //         }, 500)
+    //     }
+    // }
+    // function checkEmails(condition, callback){
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 6) {
+    //                 console.log("7) Emails");
+    //                 num = 7;
+    //                 callback();
+    //                 return;
+    //             }
+    //             console.error("Check your email");
+    //         }, 700)
+    //     }
+    // }
+    // function doSmtOnWork(condition, callback){
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 7) {
+    //                 console.log("8) You are hardworking person");
+    //                 num = 8;
+    //                 callback();
+    //                 return;
+    //             }
+    //             console.error("work work");
+    //         }, 2500)
+    //     }
+    // }
+    // function goHome(condition, callback){
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 8) {
+    //                 console.log("9) Driven to home");
+    //                 num = 9;
+    //                 callback();
+    //                 return;
+    //             }
+    //             console.error("Go to bus");
+    //         }, 1100)
+    //     }
+    // }
+    // function goSleep(condition){
+    //     {
+    //         setTimeout(() => {
+    //             if (condition === 9) {
+    //                 console.log("10) Sleeping");
+    //                 return;
+    //             }
+    //             console.error("party time");
+    //         }, 100)
+    //     }
+    // }
+    //
+    // wakeUp("morning",
+    //     () => {goWosh(num, () => {
+    //         goEat(num, () => {
+    //             getDressed(num, () => {
+    //                 goWork(num, () => {
+    //                     doCalls(num, () => {
+    //                         checkEmails(num, () => {
+    //                             doSmtOnWork(num, () => {
+    //                                 goHome(num, () => {
+    //                                     goSleep(num)})})})})})})})})}
+    // );
+
+
+
+    //--------- Promise ------------
+
+    // function wakeUp(dayTime) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (dayTime) {
+    //                 resolve("1) It`s morning");
+    //             }
+    //             reject("Go sleep");
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // function goWosh(water) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (water) {
+    //                 resolve("2) I love cold shower");
+    //             }
+    //             reject("There are no water");
+    //         }, 1000)
+    //     })
+    // }
+    //
+    // function goEat(eat) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (eat) {
+    //                 resolve(`${eat}`);
+    //             }
+    //             reject("There are no food");
+    //         }, 3000)
+    //     })
+    // }
+    //
+    // function getDressed(cloth) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (cloth) {
+    //                 resolve(`${cloth}`);
+    //             }
+    //             reject("You need clothes");
+    //         }, 200)
+    //     })
+    // }
+    //
+    // function goWork(transportToWork) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (transportToWork) {
+    //                 resolve(`${transportToWork}`);
+    //             }
+    //             reject("Harry up");
+    //         }, 1000)
+    //     })
+    // }
+    //
+    // function doCalls(callsNumber) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (callsNumber) {
+    //                 resolve(`${callsNumber}`);
+    //             }
+    //             reject("There are no calls");
+    //         }, 500)
+    //     })
+    // }
+    //
+    // function checkEmails(emailsNumber) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (emailsNumber) {
+    //                 resolve(`${emailsNumber}`);
+    //             }
+    //             reject("Check your email");
+    //         }, 700)
+    //     })
+    // }
+    //
+    // function doSmtOnWork(smthWork) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (smthWork) {
+    //                 resolve(`${smthWork}`);
+    //             }
+    //             reject("work work");
+    //         }, 2500)
+    //     })
+    // }
+    //
+    // function goHome(transportToHome) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (transportToHome) {
+    //                 resolve(`${transportToHome}`);
+    //             }
+    //             reject("Go to bus");
+    //         }, 1100)
+    //     })
+    // }
+    //
+    // function goSleep(condition) {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (condition === "night") {
+    //                 resolve(`${condition}`);
+    //             }
+    //             reject("party time");
+    //         }, 100)
+    //     })
+    // }
+    //
+    // wakeUp("morning")
+    //     .then(morning => {
+    //         console.log("1) It`s morning");
+    //         return goWosh("water");
+    //     })
+    //     .then(water => {
+    //         console.log("2) I love cold shower");
+    //         return goEat("soup and toasts");
+    //     })
+    //     .then(eat => {
+    //         console.log(`3) Eat ${eat}`);
+    //         return getDressed("Suit and coat");
+    //     })
+    //     .then(cloth => {
+    //         console.log(`4) Dressed in ${cloth}`);
+    //         return goWork("car");
+    //     })
+    //     .then(transportToWork => {
+    //         console.log(`5) Go to work by ${transportToWork}`);
+    //         return doCalls(5);
+    //     })
+    //     .then(callsNumber => {
+    //         console.log(`6) You already make ${callsNumber} calls`);
+    //         return checkEmails(21);
+    //     })
+    //     .then(emailsNumber => {
+    //         console.log(`7) You have ${emailsNumber} new emails`);
+    //         return doSmtOnWork("8) Write letters to clients");
+    //     })
+    //     .then(smthWork => {
+    //         console.log(`${smthWork}`);
+    //         return goHome("bas");
+    //     })
+    //     .then(transportToHome => {
+    //         console.log(`9) Go home by ${transportToHome}`);
+    //         return goSleep("night");
+    //     })
+    //     .then(condition => {
+    //         console.log(`10) It\`s ${condition}`);
+    //     })
+    //     .catch(e => {
+    //         console.error(e);
+    //     })
+    //     .finally(() => {
+    //         console.error("The END");
+    //     })
+
+
+
+    //--------- Async - await ------------
+
+    // let money = 0;
+    // let registeredStatus = false;
+    // let price = 1000;
+    //
+    // function registerToSite(email) {
+    //     return new  Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (email) {
+    //                 console.log("User registered");
+    //                 registeredStatus = true;
+    //                 resolve(registeredStatus);
+    //             }
+    //             reject("User with this email already exist");
+    //         }, 1000)
+    //     })
+    // }
+    //
+    // function loginToSite(email, registeredStatus) {
+    //     return new  Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (email && registeredStatus) {
+    //                 console.log("User logged");
+    //                 money = 100;
+    //                 resolve(money);
+    //             }
+    //             reject("Register first");
+    //         }, 2000)
+    //     })
+    // }
+    //
+    // function checkPrice(money) {
+    //     return new  Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (money) {
+    //                 console.log("You can buy smth");
+    //                 price = 90;
+    //                 resolve(price);
+    //             }
+    //             reject("The price is too high");
+    //         }, 3000)
+    //     })
+    // }
+    //
+    // function makePayment(money, price) {
+    //     return new  Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (money >= price) {
+    //                 console.log("You bay a car");
+    //                 resolve();
+    //             }
+    //             reject("You haven`t enough money!!!");
+    //         }, 100)
+    //     })
+    // }
+    //
+    // async function daySchedule() {
+    //     try {
+    //         const registerStatus = await registerToSite("abc@ua.com");
+    //         const moneyBonus = await loginToSite("abc@ua.com", registerStatus);
+    //         const checkedPrice = await checkPrice(moneyBonus);
+    //         const payment = await makePayment(moneyBonus, checkedPrice);
+    //
+    //         console.log("status" + registerStatus);
+    //         console.log("money: " + moneyBonus);
+    //         console.log("price: " + checkedPrice);
+    //     } catch (e) {
+    //         console.error(e);
+    //     }
+    // }
+    //
+    // daySchedule();
+</script>
+</body>
+</html>
