@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+}
+
+body {
+    padding: 10%;
+}
+.postWrap {
+    min-width: 250px;
+    width: 50%;
+    margin: 0 auto;
+    background: azure;
+    border: 2px solid silver;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    text-align: justify;
+}
+
+span {
+    font-weight: bold;
+}
+
+.postWrap > p:nth-child(4) {
+    margin-top: 10px;
+    border-top: 2px solid silver;
+    border-bottom: 2px solid silver;
+}
+
+.btnComments {
+    margin-top: 30px;
+    padding: 10px 40px;
+    border: 2px solid deepskyblue;
+    border-radius: 5px;
+    box-sizing: border-box;
+    align-self: center;
+    transition: 0.3s;
+}
+
+.btnComments:hover {
+    background: deepskyblue;
+    border: 2px solid silver;
+}
+
+.commentsOfPost {
+    display: none;
+    margin-top: 30px;
+    flex-direction: column;
+    row-gap: 30px;
+}
+.visibilityChanger {
+    display: flex;
+}
+
+.commentBox {
+    border: 2px solid silver;
+    padding: 10px;
+    box-sizing: border-box;
+
+}
+
+.commentBox > p {
+    margin-top: 10px;
+    border-top: 2px solid silver;
+}
