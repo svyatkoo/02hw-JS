@@ -28,6 +28,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/" + idOfPost)
             fetch(`https://jsonplaceholder.typicode.com/posts/${idOfPost}/comments`)
                 .then(coomentsArr => coomentsArr.json())
                 .then(coomentsArr => {
+                    commentsOfPost.innerText = "";
                     for (const comment of coomentsArr) {
                         let commentBox = document.createElement("div");
                         commentBox.classList.add("commentBox");
@@ -39,7 +40,8 @@ fetch("https://jsonplaceholder.typicode.com/posts/" + idOfPost)
                         commentsOfPost.append(commentBox);
                     }
                 })
-            btnComments.disabled = true;
+            // btnComments.disabled = true;
+            commentsOfPost.classList.toggle("visibilityChanger");
         };
 
         postWrap.append(btnComments, commentsOfPost);

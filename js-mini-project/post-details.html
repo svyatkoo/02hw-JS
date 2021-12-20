@@ -5,24 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Post details</title>
     <style>
         * {
             margin: 0;
         }
 
         body {
-            padding: 100px;
+            padding: 10%;
         }
         .postWrap {
+            min-width: 250px;
             width: 50%;
             margin: 0 auto;
             background: azure;
             border: 2px solid silver;
             padding: 10px 20px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
         }
+
         p {
             text-align: justify;
         }
@@ -44,14 +47,24 @@
             border-radius: 5px;
             box-sizing: border-box;
             align-self: center;
+            transition: 0.3s;
+        }
+
+        .btnComments:hover {
+            background: deepskyblue;
+            border: 2px solid silver;
         }
 
         .commentsOfPost {
+            display: none;
             margin-top: 30px;
-            display: flex;
             flex-direction: column;
             row-gap: 30px;
         }
+        .visibilityChanger {
+            display: flex;
+        }
+
         .commentBox {
             border: 2px solid silver;
             padding: 10px;
@@ -63,8 +76,6 @@
             margin-top: 10px;
             border-top: 2px solid silver;
         }
-
-
     </style>
 </head>
 <body>

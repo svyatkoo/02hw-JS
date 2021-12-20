@@ -13,16 +13,15 @@
 fetch("https://jsonplaceholder.typicode.com/users")
     .then(usersArr => usersArr.json())
     .then(usersArr => {
-        console.log(usersArr);
         let wrapUsers = document.createElement("div");
         wrapUsers.classList.add("wrapUsers");
 
         document.body.appendChild(wrapUsers);
+
+
         for (const user of usersArr) {
             let userContainer = document.createElement("div");
             userContainer.classList.add("userContainer");
-
-
 
             let userContainerHeader = document.createElement("div");
             userContainerHeader.classList.add("userContainerHeader");
@@ -36,8 +35,10 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
             let btnUserDetails = document.createElement("button");
             btnUserDetails.innerText = "Details";
-            linkDetails.append(btnUserDetails)
-            userContainer.append(userContainerHeader, linkDetails)
+
+
+            linkDetails.append(btnUserDetails);
+            userContainer.append(userContainerHeader, linkDetails);
             wrapUsers.append(userContainer);
         }
     })

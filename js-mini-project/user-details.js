@@ -12,11 +12,12 @@ fetch("https://jsonplaceholder.typicode.com/users/" + idOfUser)
     .then(objectUser => {
         let wrapUserInfo = document.createElement("div");
         wrapUserInfo.classList.add("wrapUserInfo");
+
+
         let header = document.createElement("div");
         header.classList.add("header");
         let headerInfo = document.createElement("div");
         headerInfo.classList.add("headerInfo");
-
 
         let contactInfo = document.createElement("div");
         contactInfo.classList.add("contactInfo");
@@ -27,9 +28,11 @@ fetch("https://jsonplaceholder.typicode.com/users/" + idOfUser)
         let companyBox = document.createElement("div");
         companyBox.classList.add("companyBox");
 
+
         let titleOfPostsContainer = document.createElement("div");
         titleOfPostsContainer.classList.add("titleOfPostsContainer");
 
+// create button to show the Posts container
         let btnTitleOfPosts = document.createElement("button");
         btnTitleOfPosts.classList.add("btnTitleOfPosts");
         btnTitleOfPosts.innerText = "Post of current user";
@@ -38,7 +41,7 @@ fetch("https://jsonplaceholder.typicode.com/users/" + idOfUser)
                 .then(receivePostsArr => receivePostsArr.json())
                 .then(receivePostsArr => {
                     wrapUserInfo.append(titleOfPostsContainer);
-                    // titleOfPostsContainer.innerText = "";
+                    titleOfPostsContainer.innerText = "";
                     for (const posts of receivePostsArr) {
                         let postBox = document.createElement("div");
                         postBox.classList.add("postBox");
@@ -56,9 +59,9 @@ fetch("https://jsonplaceholder.typicode.com/users/" + idOfUser)
                         linkDetails.append(btnPostInfo);
                         postBox.append(postTitle, linkDetails);
                         titleOfPostsContainer.append(postBox);
-                        console.log(posts);
                     }
-                    btnTitleOfPosts.disabled = true;
+                    // btnTitleOfPosts.disabled = true;
+                    titleOfPostsContainer.classList.toggle("visibilityChanger")
                 });
         }
 
@@ -66,7 +69,7 @@ fetch("https://jsonplaceholder.typicode.com/users/" + idOfUser)
         document.body.append(wrapUserInfo);
 
 
-
+// write Users info and create HTML elements
         for (const userKey in objectUser) {
             let titleName = userKey.slice(0, 1).toUpperCase() + userKey.slice(1);
             if (userKey === "id") {
@@ -88,8 +91,10 @@ fetch("https://jsonplaceholder.typicode.com/users/" + idOfUser)
                 let addressInfo = document.createElement("div");
                 addressInfo.classList.add("addressInfo");
                 addressBox.append(addressInfo);
+
                 for (const key in objectUser[userKey]) {
                     let titleName = key.slice(0, 1).toUpperCase() + key.slice(1);
+
                     if (key !== "geo") {
                         let pAddress = document.createElement("li");
                         pAddress.innerHTML = `${titleName}: ${objectUser[userKey][key]}`;
@@ -99,6 +104,7 @@ fetch("https://jsonplaceholder.typicode.com/users/" + idOfUser)
                         geoInfo.classList.add("geoInfo");
                         geoInfo.innerHTML = `<li>${titleName}:</li>`;
                         addressInfo.append(geoInfo);
+
                         for (const geoKey in objectUser[userKey][key]) {
                             let pGeo = document.createElement("p");
                             pGeo.innerText = `${geoKey}: ${objectUser[userKey][key][geoKey]}`;
