@@ -10,13 +10,14 @@
 <body>
 <script>
     let name1 = "    Harry      Potter    ";
-    let name2 = "    Hermiona     Volta";
+    let name2 = "Hermiona     Volta";
     let name3 = " Jon   Doe    Potter    ";
 
     function nameNormalizator(nameToNormalize) {
         const xxx = nameToNormalize.trim().split(" ").join(" ").replaceAll(" ", "1").replace("1", " ").replaceAll(1, "");
         console.log(xxx);
     }
+
     nameNormalizator(name1);
     nameNormalizator(name2);
     nameNormalizator(name3);
